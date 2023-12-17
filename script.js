@@ -28,7 +28,9 @@ boxes.forEach(box => {
         turnO = true;
       
       }
+      updatePlayers()
       checkWin();
+      
     }
   });
 });
@@ -44,19 +46,18 @@ let p1 = "O"
 let p2 = "X"
 
 let showWinner = (winner) => {
-   hideClass.classList.remove("hide")
    hideClass.classList.add("openGameOver")
-   console.log(hideClass.classList)
    if (winner === p1) {
-   				result.textContent = player1.textContent + (" = O")
+   				result.textContent = player1.textContent + (" wins!")
    }else {
-   				result.textContent = player2.textContent + (" = X")
+   				result.textContent = player2.textContent + (" wins!")
    }
    
   disBoxes();
 }
 
 let checkWin = () => {
+
   let index = 0
   let tie = true;
   for (let pattern of winPatterns) {
@@ -78,8 +79,7 @@ index++;
       }
       
       if (tie && index === 8) {
-        gameOver.classList.remove('hide')
-        gameOver.classList.add("openGameOver")
+        hideClass.classList.add("openGameOver")
         result.textContent = "Draw!";
         disBoxes();
       
@@ -89,29 +89,34 @@ index++;
 }
 }
 
-resetButton.addEventListener('click', () => {
-  gameOver.classList.add('hide')
+const resetFunc = () => {
+  hideClass.classList.remove('openGameOver')
   boxes.forEach(box => {
     box.innerHTML = '';
     box.disabled = false;
-    turnO = true;
   });
-});
+  updatePlayers();
+  };
 
-resetButton2.addEventListener('click', () => {
-  gameOver.classList.add('hide')
-  boxes.forEach(box => {
-    box.innerHTML = '';
-    box.disabled = false;
-    turnO = true;
-  });
-});
+resetButton.addEventListener('click', resetFunc);
+
+resetButton2.addEventListener('click', resetFunc);
 
   function updatePlayers() {
-    player1.textContent = localStorage.getItem("input1Value");
-    player2.textContent = localStorage.getItem("input2Value");
-   
+  rightTurn()
+    player1.textContent = localStorage.getItem("input1Value") + "'s turn";
+    player2.textContent = localStorage.getItem("input2Value") + "'s turn";
   }
 
   window.addEventListener("DOMContentLoaded", updatePlayers);
 
+function rightTurn() {
+				if (turnO === true) {
+								player2.classList.add("rightTurn")
+								player1.classList.remove("rightTurn")
+				}else if (turnO !== true){
+				player1.classList.add("rightTurn")
+				player2.classList.remove("rightTurn")
+}
+}
+				
