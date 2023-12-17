@@ -39,11 +39,19 @@ body {
 }
 
 .box {
-  /* height: 60px; */
+  max-height: 100%;
   width: 100%;
   border-radius: 10px;
   border: none;
   font-size: 40px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box-content {
+  height: 50px;
 }
 
 #reset {
