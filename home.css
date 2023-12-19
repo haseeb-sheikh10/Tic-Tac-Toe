@@ -4,7 +4,7 @@
 }
 
 body {
-				background-color: #0C356A;
+				background-image: url('tic-tac-toe.jpg');
 				text-align: center;
 				
 }
@@ -19,26 +19,29 @@ body {
 .btn{
 				
 				text-decoration: none;
+				height: 7vh;
+				width: 15vh;
 				color: white;
 				background-color: orangered;
 				padding: 20px 35px 20px 35px;
 				font-weight: 900;
+				font-size: 40px;
 				border: 2px solid black;
-				border-radius: 10px;
-				box-shadow: 5px 5px 5px black;
+				border-radius: 20px;
+				box-shadow: 10px 10px 10px black;
 }
 
 .popup{
-				width: 250px;
+				width: 80%;
+				height: 50%;
 				padding: 20px 20px 35px 20px;
-				background-color: purple;
+				background-image: url('win-bg.jpg');
 				position: absolute;
 				top: 0;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				text-align: center;
 				border: 1px solid black;
-				border-radius: 10px;
+				border-radius: 20px;
 				visibility: hidden;
 				transition: 0.5s ease-in;
 				opacity: 0;
@@ -51,30 +54,87 @@ body {
 }
 
 #ok{
-				margin-left: 220px;
-				padding: 3px 10px 3px 10px;
+				padding: 5px 15px;
 				background-color: orangered;
 				box-shadow: 3px 3px 3px black;
-				position: relative;
-				top: 15px;
 				border: 1px solid black;
 				border-radius: 5px;
+				font-size: 50px;
 }
 
 .heading{
-				font-size: 3rem;
+				font-size: 7rem;
   padding: 40px 0 0 0 ;
   text-decoration: line-through;
-  text-decoration-color: #0C356A;
+  text-decoration-color: white;
   color: #FFC436;
 }
 
 .closepopup{
+    color: #FFC436;
 				background: transparent;
 				border: none;
-				font-size: 20px;
+				font-size: 5rem;
 				position: relative;
-				bottom: 13px;
-				right: 125px;
+				bottom: 10px;
+				right: 45%;
+				-webkit-text-stroke: 2px black;
 }
 
+.info1 label{
+			font-size: 50px;
+			color: #FFC436;
+			font-weight: bolder;
+		 -webkit-text-stroke: 2px black;
+}
+
+.info1 input{
+				height: 40px;
+				width: 70%;
+				font-size: 35px;
+}
+
+.info2 label{
+			font-size: 50px;
+			color: #FFC436;
+			font-weight: bolder;
+			-webkit-text-stroke: 2px black;
+}
+
+.info2 input{
+				height: 40px;
+				width: 70%;
+				font-size: 35px;
+				
+}
+
+#error1{
+			 color: red;
+			 visibility: hidden;
+			 font-size: 30px;
+			 margin-top: 15px;
+}
+
+#error2{
+			 color: red;
+			 visibility: hidden;
+			 font-size: 30px;
+			 margin-top: 15px;
+}
+
+.info1{
+		margin-bottom: 100px;
+}
+
+.info2{
+				
+}
+
+hr{
+		border: 2px solid #FFC436;
+		margin-bottom: 30px;
+}
+
+.element-container{
+				margin-top: 30%;
+}
